@@ -14,7 +14,7 @@ class Counter extends Component {
   };
 
   formatIndex() {
-    const { count } = this.state.value;
+    const { count } = this.props.counter.value;
     return count === 0 ? "Zero" : count;
   }
 
