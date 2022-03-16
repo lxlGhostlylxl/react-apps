@@ -42,11 +42,13 @@ class Counters extends Component {
   };
 
   handleDecrement = (counter) => {
-    const counters = [...this.state.counters];
-    const index = counters.indexOf(counter);
-    counters[index] = { ...counter };
-    counters[index].value--;
-    this.setState({ counters });
+    if (counter.value > 0) {
+      const counters = [...this.state.counters];
+      const index = counters.indexOf(counter);
+      counters[index] = { ...counter };
+      counters[index].value--;
+      this.setState({ counters });
+    }
   };
 
   render() {
